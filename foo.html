@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Blank Slate</title>
+
+<script>
+  (function(d) {
+    var config = {
+      kitId: 'ofj0tha',
+      scriptTimeout: 3000
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<!-- TODO: put a jQuery fallback to local on the server -->
+
+<link href='http://fonts.googleapis.com/css?family=Vollkorn:400,400italic,700' rel='stylesheet' type='text/css' />
+<link href='http://fonts.googleapis.com/css?family=Old+Standard+TT:400,400italic,700' rel='stylesheet' type='text/css' />
+
+<style>
+
+* { font-family: 'minion-pro', serif; /* font-family: 'minion-pro', 'Vollkorn', serif; */
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern";
+  -webkit-font-feature-settings: "kern";
+  -moz-font-feature-settings: "kern";
+  -moz-font-feature-settings: "kern=1";
+}
+
+h1, h2, h3, h4 { font-family: 'semplicitapro', serif; /* font-family: 'semplicitapro', 'Old Standard TT', serif; */ }
+
+/* General photoset style */
+ .photoset {
+	overflow: hidden;
+	width: 100%;
+}
+.photoset .photoset-row {
+	margin-bottom: .5rem;
+	overflow: hidden;
+  width: 150%;
+}
+	.photoset .photoset-row:last-child { margin: 0; }
+.photoset .photoset-item {
+	display: block;
+	float: left;
+	margin: 0 .25rem;
+}
+	.photoset .photoset-item:first-child { margin-left: 0; }
+	.photoset .photoset-item:last-child  { margin-right: 0; }
+.photoset figure {
+	margin: 0;
+	overflow: hidden;
+	position: relative;
+  -webkit-backface-visibility: hidden; /* To fix webkit 1px rendering bug */
+}
+.photoset figcaption {
+	background-color: rgba(255, 255, 255, .75);
+	box-sizing: border-box;
+  font-size: .75rem;
+	padding: .5rem;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	-webkit-transform: translateY(100%);
+	transform: translateY(100%);
+	transition: all .5s ease-in-out;
+}
+.photoset-item a {
+  border: 0;
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.photoset .photoset-item:hover a + figcaption {
+	-webkit-transform: translateY(0);
+	transform: translateY(0);
+}
+.photoset img {
+	display: block;
+  max-width: 100%;
+	transition: all .25s ease-in-out;
+}
+</style>
+
+<script>
+  $(document).ready(function() {
+    // This is more like it!  
+    alert('hello.');
+  });
+(function($,sr){
+
+  // debouncing function from John Hann
+  // http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
+  var debounce = function (func, threshold, execAsap) {
+    var timeout;
+
+    return function debounced () {
+      var obj = this, args = arguments;
+      function delayed () {
+        if (!execAsap)
+          func.apply(obj, args);
+        timeout = null;
+      };
+
+      if (timeout)
+        clearTimeout(timeout);
+      else if (execAsap)
+        func.apply(obj, args);
+
+      timeout = setTimeout(delayed, threshold || 100);
+    };
+  }
+  // smartresize 
+  jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
+
+})(jQuery,'smartresize');
+
+/* Wait for DOM to be ready */
+$(function() {
+
+  // Detect resize event
+  $(window).smartresize(function () {
+    // Set photoset image size
+    $('.photoset-row').each(function () {
+      var $pi    = $(this).find('.photoset-item'),
+          cWidth = $(this).parent('.photoset').width();
+
+      // Generate array containing all image aspect ratios
+      var ratios = $pi.map(function () {
+        return $(this).find('img').data('org-width') / $(this).find('img').data('org-height');
+      }).get();
+
+      // Get sum of widths
+      var sumRatios = 0, sumMargins = 0,
+          minRatio  = Math.min.apply(Math, ratios);
+      for (var i = 0; i < $pi.length; i++) {
+        sumRatios += ratios[i]/minRatio;
+      };
+
+      $pi.each(function (){
+        sumMargins += parseInt($(this).css('margin-left')) + parseInt($(this).css('margin-right'));
+      });
+
+      // Calculate dimensions
+      $pi.each(function (i) {
+        var minWidth = (cWidth - sumMargins)/sumRatios;
+        $(this).find('img')
+        .height(Math.floor(minWidth/minRatio))
+        .width(Math.floor(minWidth/minRatio) * ratios[i]);
+      });
+    });
+  });
+});
+
+/* Wait for images to be loaded */
+$(window).load(function () {
+
+  // Store original image dimensions
+  $('.photoset-item img').each(function () {
+    $(this)
+    .data('org-width', $(this)[0].naturalWidth)
+    .data('org-height', $(this)[0].naturalHeight);
+  });
+
+  $(window).resize();
+});
+</script>
+
+</head>
+
+<body>
+<h3>Headers are fun</h3>
+<p>This is a body of text. I'm going to just talk on and on and on for a bit about stuff so that I make a nice block of text for everyone to see.</p>
+<p>Here is another block. It's hard to write about nothing for an extended period of time. At some point you realize that you are just writing nonsense. And then you wonder if anyone is going to read this. I really hope not. That would be a bit embarrassing. Especially since Notepad doesn't have a spell checker.</p>
+
+<div class="photoset">
+<div class="photoset-row">
+<figure class="photoset-item"><img src="../Pictures/f-35.jpg" /></figure>
+<figure class="photoset-item"><img src="../Pictures/cafire1.jpg" /></figure>
+<figure class="photoset-item"><img src="../Pictures/sonic.jpg" /></figure>
+</div>
+<div class="photoset-row">
+<figure class="photoset-item"><img src="../Pictures/sunflower.jpg" /></figure>
+<figure class="photoset-item"><img src="../Pictures/spider.jpg" /></figure>
+<figure class="photoset-item"><img src="../Pictures/18102421_0e6e263720_o.jpg" /></figure>
+<figure class="photoset-item"><img src="../Pictures/spacenebula.jpg" /></figure>
+</div>
+</div>
+
+<h3>A document that smells like jelly</h3>
+<p>When you have a document, you don't typically want it to smell like jelly. But if that document needs to be eaten by a small child, then perhaps it wouldn't be a bad thing that it smelled like something sweet and sticky and delicious. Of course, why would you have a document that smells like jelly in the first place? And that is a question for another paragraph.</p>
+<p>Now let us explore the conundrum of why one would ever find themselves with a document that smells like jelly. The obvious answer would be that their document had an unfortunate encounter with the wrong side of a jelly covered slice of toast. Or perhaps a toddler was enjoying some figurepainting with a jar of jelly rather than the usual fingerpainting medium of paint. Does it really matter?</p>
+
+</body>
+</html>
