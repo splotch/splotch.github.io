@@ -1,211 +1,106 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Blank Slate</title>
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-<script>
-  (function(d) {
-    var config = {
-      kitId: 'ofj0tha',
-      scriptTimeout: 3000
-    },
-    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-  })(document);
-</script>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <style>
+            body {
+                padding-top: 50px;
+                padding-bottom: 20px;
+            }
+        </style>
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<!-- TODO: put a jQuery fallback to local on the server -->
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right" role="form">
+            <div class="form-group">
+              <input type="text" placeholder="Email" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Sign in</button>
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
 
-<link href='http://fonts.googleapis.com/css?family=Vollkorn:400,400italic,700' rel='stylesheet' type='text/css' />
-<link href='http://fonts.googleapis.com/css?family=Old+Standard+TT:400,400italic,700' rel='stylesheet' type='text/css' />
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Hello, world!</h1>
+        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+      </div>
+    </div>
 
-<style>
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Heading</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+          <h2>Heading</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+       </div>
+        <div class="col-md-4">
+          <h2>Heading</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+      </div>
 
-* { font-family: 'jaf-facitweb', sans-serif; /* font-family: 'minion-pro', 'Vollkorn', serif; */
-  text-rendering: optimizeLegibility;
-  font-feature-settings: "kern";
-  -webkit-font-feature-settings: "kern";
-  -moz-font-feature-settings: "kern";
-  -moz-font-feature-settings: "kern=1";
-}
+      <hr>
 
-body {
-    position: absolute;
-    margin: 0px;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    background-color: #434343;
-    background-image: linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, 0.05) 25%, rgba(255, 255, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, 0.05) 75%, rgba(255, 255, 255, 0.05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, 0.05) 25%, rgba(255, 255, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, 0.05) 75%, rgba(255, 255, 255, 0.05) 76%, transparent 77%, transparent);
-    background-size: 2pt 2pt;
-}
+      <footer>
+        <p>&copy; Company 2015</p>
+      </footer>
+    </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
-h1, h2, h3, h4 { font-family: 'semplicitapro', sans-serif; /* font-family: 'semplicitapro', 'Old Standard TT', serif; */ }
+        <script src="js/vendor/bootstrap.min.js"></script>
 
-/* General photoset style */
- .photoset {
-	overflow: hidden;
-	width: 100%;
-}
-.photoset .photoset-row {
-	margin-bottom: .5rem;
-	overflow: hidden;
-  width: 150%;
-}
-	.photoset .photoset-row:last-child { margin: 0; }
-.photoset .photoset-item {
-	display: block;
-	float: left;
-	margin: 0 .25rem;
-}
-	.photoset .photoset-item:first-child { margin-left: 0; }
-	.photoset .photoset-item:last-child  { margin-right: 0; }
-.photoset figure {
-	margin: 0;
-	overflow: hidden;
-	position: relative;
-  -webkit-backface-visibility: hidden; /* To fix webkit 1px rendering bug */
-}
-.photoset figcaption {
-	background-color: rgba(255, 255, 255, .75);
-	box-sizing: border-box;
-  font-size: .75rem;
-	padding: .5rem;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	-webkit-transform: translateY(100%);
-	transform: translateY(100%);
-	transition: all .5s ease-in-out;
-}
-.photoset-item a {
-  border: 0;
-  display: block;
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-.photoset .photoset-item:hover a + figcaption {
-	-webkit-transform: translateY(0);
-	transform: translateY(0);
-}
-.photoset img {
-	display: block;
-  max-width: 100%;
-	transition: all .25s ease-in-out;
-}
-</style>
+        <script src="js/main.js"></script>
 
-<script>
-  $(document).ready(function() {
-    // This is more like it!  
-    alert('hello.');
-  });
-(function($,sr){
-
-  // debouncing function from John Hann
-  // http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
-  var debounce = function (func, threshold, execAsap) {
-    var timeout;
-
-    return function debounced () {
-      var obj = this, args = arguments;
-      function delayed () {
-        if (!execAsap)
-          func.apply(obj, args);
-        timeout = null;
-      };
-
-      if (timeout)
-        clearTimeout(timeout);
-      else if (execAsap)
-        func.apply(obj, args);
-
-      timeout = setTimeout(delayed, threshold || 100);
-    };
-  }
-  // smartresize 
-  jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
-
-})(jQuery,'smartresize');
-
-/* Wait for DOM to be ready */
-$(function() {
-
-  // Detect resize event
-  $(window).smartresize(function () {
-    // Set photoset image size
-    $('.photoset-row').each(function () {
-      var $pi    = $(this).find('.photoset-item'),
-          cWidth = $(this).parent('.photoset').width();
-
-      // Generate array containing all image aspect ratios
-      var ratios = $pi.map(function () {
-        return $(this).find('img').data('org-width') / $(this).find('img').data('org-height');
-      }).get();
-
-      // Get sum of widths
-      var sumRatios = 0, sumMargins = 0,
-          minRatio  = Math.min.apply(Math, ratios);
-      for (var i = 0; i < $pi.length; i++) {
-        sumRatios += ratios[i]/minRatio;
-      };
-
-      $pi.each(function (){
-        sumMargins += parseInt($(this).css('margin-left')) + parseInt($(this).css('margin-right'));
-      });
-
-      // Calculate dimensions
-      $pi.each(function (i) {
-        var minWidth = (cWidth - sumMargins)/sumRatios;
-        $(this).find('img')
-        .height(Math.floor(minWidth/minRatio))
-        .width(Math.floor(minWidth/minRatio) * ratios[i]);
-      });
-    });
-  });
-});
-
-/* Wait for images to be loaded */
-$(window).load(function () {
-
-  // Store original image dimensions
-  $('.photoset-item img').each(function () {
-    $(this)
-    .data('org-width', $(this)[0].naturalWidth)
-    .data('org-height', $(this)[0].naturalHeight);
-  });
-
-  $(window).resize();
-});
-</script>
-
-</head>
-
-<body>
-<h3>Headers are fun</h3>
-<p>This is a body of text. I'm going to just talk on and on and on for a bit about stuff so that I make a nice block of text for everyone to see.</p>
-<p>Here is another block. It's hard to write about nothing for an extended period of time. At some point you realize that you are just writing nonsense. And then you wonder if anyone is going to read this. I really hope not. That would be a bit embarrassing. Especially since Notepad doesn't have a spell checker.</p>
-
-<div class="photoset">
-<div class="photoset-row">
-<figure class="photoset-item"><img src="../Pictures/f-35.jpg" /></figure>
-<figure class="photoset-item"><img src="../Pictures/cafire1.jpg" /></figure>
-<figure class="photoset-item"><img src="../Pictures/sonic.jpg" /></figure>
-</div>
-<div class="photoset-row">
-<figure class="photoset-item"><img src="../Pictures/sunflower.jpg" /></figure>
-<figure class="photoset-item"><img src="../Pictures/spider.jpg" /></figure>
-<figure class="photoset-item"><img src="../Pictures/18102421_0e6e263720_o.jpg" /></figure>
-<figure class="photoset-item"><img src="../Pictures/spacenebula.jpg" /></figure>
-</div>
-</div>
-
-<h3>A document that smells like jelly</h3>
-<p>When you have a document, you don't typically want it to smell like jelly. But if that document needs to be eaten by a small child, then perhaps it wouldn't be a bad thing that it smelled like something sweet and sticky and delicious. Of course, why would you have a document that smells like jelly in the first place? And that is a question for another paragraph.</p>
-<p>Now let us explore the conundrum of why one would ever find themselves with a document that smells like jelly. The obvious answer would be that their document had an unfortunate encounter with the wrong side of a jelly covered slice of toast. Or perhaps a toddler was enjoying some figurepainting with a jar of jelly rather than the usual fingerpainting medium of paint. Does it really matter?</p>
-
-</body>
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+        </script>
+    </body>
 </html>
