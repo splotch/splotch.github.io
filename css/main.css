@@ -1,3 +1,55 @@
+/* First we reset all the styles
+   http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
 /* Initial styles */
 
 /* Good colors:
@@ -17,7 +69,8 @@ Khaki: #e6dbc9
 */
 /* Colors */
 :root {
-  --color_text: #2e3830;
+  --color_dark_text: #2e3830;
+  --color_light_text: #e6dbc9;
   --color_pop: #c53211;
   --color_light_bg: #e6dbc9;
   --color_dark_bg: #393939;
@@ -27,8 +80,51 @@ Khaki: #e6dbc9
 }
 
 body {
-  color: var(--color_text);
+  color: var(--color_dark_text);
   background-color: var(--color_light_bg);
+  font-family: 'PT Serif', serif;
+  line-height: 1.25em;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'PT Sans', sans-serif;
+  text-transform: uppercase;
+}
+
+/* See this reference on text height: http://typecast.com/blog/a-more-modern-scale-for-web-typography */
+/* When I figure out how to do variable font size based on the display, then I can implement that here */
+h1 {
+  font-size: 3em;
+  line-height: 1.05em;
+}
+
+h2 {
+  font-size: 2.25em;
+  line-height: 1.25em;
+}
+
+h3 {
+  font-size: 1.75em;
+  line-height: 1.25em;
+}
+
+h4 {
+  font-size: 1.125em;
+  line-height: 1.22222222em;
+}
+
+blockquote {
+  font-size: 1.5em;
+  line-height: 1.45833333em;
+}
+
+header {
+  /*color: var(--color_light_text);*/
+  /*background-color: var(--color_dark_bg);*/
+  background-color: var(--color_deep);
+  text-align: center;
+  padding: 1em 1em 0.9em 1em;
+  border-bottom: .1em solid var(--color_dark_text);
 }
 
 a {
