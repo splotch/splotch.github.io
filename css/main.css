@@ -1,10 +1,36 @@
 /* Initial styles */
 
+/* Good colors:
+Dark Grey: #393939 – Dark designs take a little bit more fore-thought but can provide tons of contrast if used well.
+
+Deep Orange: #FF5A09 – With different shades of oranges, there is depth and gradient, without venturing into totally new colors.
+
+Light Orange: #ec7f37 – Utilizing illustrative elements, requires a bit of flexibility for the natural lightness and darkness to contour objects.
+
+Orange Yellow: #be4f0c – Using on color over on the color wheel can keep the palette looking classy, bold and restrained.
+
+Cotton Red: #c53211
+
+Clean Deep Grey: #2e3830
+
+Khaki: #e6dbc9
+*/
+/* Colors */
+:root {
+  --color_text: #2e3830;
+  --color_pop: #c53211;
+  --color_light_bg: #e6dbc9;
+  --color_dark_bg: #393939;
+  --color_bright: #be4f0c;
+  --color_deep: #ff5a09;
+  --color_light: #ec7f37;
+}
+
 body {
-  color: #2e3830;
-  background-color: #e6dbc9
+  color: var(--color_text);
+  background-color: var(--color_light_bg);
 }
 
 a {
-  color: #c53211;
+  color: var(--color_pop);
 }
